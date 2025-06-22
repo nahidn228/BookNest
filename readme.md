@@ -27,6 +27,17 @@ This system manages books, borrowing operations, and provides real-time data usi
 
 ---
 
+## 💡 Why This Project?
+
+Library management is a classic example of CRUD + business logic challenges.  
+This project helps solidify concepts like:
+- Data modeling using Mongoose
+- API design with filtering and sorting
+- Business rules (e.g., availability after borrowing)
+- Aggregation pipeline for reporting
+
+
+
 
 ## 📚 API Endpoints
 
@@ -109,6 +120,8 @@ This system manages books, borrowing operations, and provides real-time data usi
 
 
 ```
+
+
 
 
 ## 🔧 Setup & Installation

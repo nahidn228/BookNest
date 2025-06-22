@@ -3,12 +3,12 @@ import { IBook } from "./book.interface";
 
 const bookSchema = new Schema<IBook>(
   {
-    title: { type: String, required: true },
-    author: { type: String, required: true },
+    title: { type: String, required: [true, "title is required"], },
+    author: { type: String, required: [true, "author  is required"], },
     genre: {
       type: String,
       uppercase: true,
-      required: true,
+      required: [true, "genre is required"],
       enum: {
         values: [
           "FICTION",
@@ -21,7 +21,7 @@ const bookSchema = new Schema<IBook>(
         message: "{VALUE} is not acceptable",
       },
     },
-    isbn: { type: String, required: true },
+    isbn: { type: String, required: [true, "isbn is required"], },
     description: { type: String, default: "" },
     copies: {
       type: Number,
