@@ -1,13 +1,14 @@
 import { Router } from "express";
-import userRouts from "../user/user.routs";
-
-import orderRoute from "../order/order.routes";
 import bookRoutes from "../book/book.routes";
+import borrowRoutes from "../borrow/borrow.routes";
 
 const routes = Router();
 
-routes.use("/api", userRouts);
 routes.use("/api", bookRoutes);
-routes.use("/api", orderRoute);
+routes.use("/api", borrowRoutes);
+
+console.log("bookRoutes type:", typeof bookRoutes);
+console.log("borrowRoutes type:", typeof borrowRoutes);
+
 
 export default routes;

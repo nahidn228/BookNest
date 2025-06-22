@@ -22,7 +22,7 @@ const bookSchema = new Schema<IBook>(
       },
     },
     isbn: { type: String, required: true },
-    description: { type: String, default: '' },
+    description: { type: String, default: "" },
     copies: {
       type: Number,
       required: true,
@@ -35,6 +35,12 @@ const bookSchema = new Schema<IBook>(
     timestamps: true,
   }
 );
+
+bookSchema.methods.updateAvailability = function () {
+  if (this.copies <= 0) {
+    this.available = false;
+  }
+};
 
 const Book = model<IBook>("Book", bookSchema);
 
